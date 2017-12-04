@@ -1,0 +1,36 @@
+{
+  "name": "electron-test",
+  "version": "0.1.0",
+  "main": "source/main.js",
+  "description": "electron-updater example project based on https://github.com/iffy/electron-updater-example",
+  "author": "Pavel Cernik",
+  "scripts": {
+    "publish": "build -p always"
+  },
+  "devDependencies": {
+    "electron": "^1.7.9",
+    "electron-builder": "^19.43.3"
+  },
+  "dependencies": {
+    "electron-log": "^1.3.0",
+    "electron-updater": "^2.15.0"
+  },
+  "build": {
+    "appId": "com.github.vecernik87.electrontest",
+	"publish": [{
+      "provider": "github",
+      "owner": "vecernik87",
+      "repo": "electron-test"
+    }],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32"
+          ]
+        }
+      ]
+    },
+  }
+}
